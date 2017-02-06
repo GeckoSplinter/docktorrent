@@ -2,8 +2,8 @@ FROM debian:jessie
 
 MAINTAINER kfei <kfei@kfei.net>
 
-ENV VER_LIBTORRENT 0.13.4
-ENV VER_RTORRENT 0.9.4
+ENV VER_LIBTORRENT 0.13.6
+ENV VER_RTORRENT 0.9.6
 
 WORKDIR /usr/local/src
 
@@ -21,7 +21,7 @@ RUN build_deps="automake build-essential ca-certificates libc-ares-dev libcppuni
     cd .. && \
     rm -rf curl-* && \
     ldconfig && \
-    svn --trust-server-cert checkout https://svn.code.sf.net/p/xmlrpc-c/code/stable/ xmlrpc-c && \
+    svn --trust-server-cert checkout https://svn.code.sf.net/p/xmlrpc-c/code/super_stable/ xmlrpc-c && \
     cd xmlrpc-c && \
     ./configure --enable-libxml2-backend --disable-abyss-server --disable-cgi-server && \
     make && \
