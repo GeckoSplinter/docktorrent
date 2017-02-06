@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# set htpasswd
+[ "${TORRENT_USER}" ] && [ "${TORRENT_PASS}" ] && {
+    htpasswd -cb /usr/share/nginx/html/rutorrent/.htpasswd ${TORRENT_USER} ${TORRENT_PASS}
+}
+
 # Create working directories if not exists
 mkdir -p /rtorrent/{downloads,watch,.session,rutorrent/user-profiles,rutorrent/user-profiles/torrents}
 
